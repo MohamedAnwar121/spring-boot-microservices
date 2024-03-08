@@ -1,4 +1,4 @@
-package com.example.ratingsservice.service;
+package org.example.trendingmoviesservice.service;
 
 
 import com.google.protobuf.Empty;
@@ -21,6 +21,7 @@ public class TrendingMoviesService extends TrendingMoviesGrpc.TrendingMoviesImpl
 
     @Override
     public void getTopTenTrendingMovies(Empty request, StreamObserver<Movies> responseObserver) {
+        System.out.println("trending movies");
         var movieIds = trendingMoviesRatingService.getTopTenTrendingMoviesRating(request);
         var movies = trendingMoviesInfoService.getTopTenTrendingMoviesInfo(movieIds);
         responseObserver.onNext(movies);

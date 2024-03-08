@@ -17,6 +17,7 @@ public class TrendingMoviesInfoService extends TrendingMoviesInfoGrpc.TrendingMo
 
     @Override
     public void getTopTenTrendingMoviesInfo(TopMovieIds request, StreamObserver<Movies> responseObserver) {
+        System.out.println("in movie info");
         var movies = Movies.newBuilder()
                 .addAllMovies(request.getMovieIdList()
                         .stream()
