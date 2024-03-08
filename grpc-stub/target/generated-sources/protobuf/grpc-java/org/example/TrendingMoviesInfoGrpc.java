@@ -1,50 +1,63 @@
 package org.example;
 
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.4.0)",
+    value = "by gRPC proto compiler (version 1.62.2)",
     comments = "Source: Schema.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class TrendingMoviesInfoGrpc {
 
   private TrendingMoviesInfoGrpc() {}
 
-  public static final String SERVICE_NAME = "org.example.TrendingMoviesInfo";
+  public static final java.lang.String SERVICE_NAME = "org.example.TrendingMoviesInfo";
 
   // Static method descriptors that strictly reflect the proto.
-  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<org.example.TopMovieIds,
-      org.example.Movies> METHOD_GET_TOP_TEN_TRENDING_MOVIES_INFO =
-      io.grpc.MethodDescriptor.<org.example.TopMovieIds, org.example.Movies>newBuilder()
-          .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName(generateFullMethodName(
-              "org.example.TrendingMoviesInfo", "getTopTenTrendingMoviesInfo"))
-          .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.example.TopMovieIds.getDefaultInstance()))
-          .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              org.example.Movies.getDefaultInstance()))
-          .build();
+  private static volatile io.grpc.MethodDescriptor<org.example.TopMovieIds,
+      org.example.Movies> getGetTopTenTrendingMoviesInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getTopTenTrendingMoviesInfo",
+      requestType = org.example.TopMovieIds.class,
+      responseType = org.example.Movies.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<org.example.TopMovieIds,
+      org.example.Movies> getGetTopTenTrendingMoviesInfoMethod() {
+    io.grpc.MethodDescriptor<org.example.TopMovieIds, org.example.Movies> getGetTopTenTrendingMoviesInfoMethod;
+    if ((getGetTopTenTrendingMoviesInfoMethod = TrendingMoviesInfoGrpc.getGetTopTenTrendingMoviesInfoMethod) == null) {
+      synchronized (TrendingMoviesInfoGrpc.class) {
+        if ((getGetTopTenTrendingMoviesInfoMethod = TrendingMoviesInfoGrpc.getGetTopTenTrendingMoviesInfoMethod) == null) {
+          TrendingMoviesInfoGrpc.getGetTopTenTrendingMoviesInfoMethod = getGetTopTenTrendingMoviesInfoMethod =
+              io.grpc.MethodDescriptor.<org.example.TopMovieIds, org.example.Movies>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getTopTenTrendingMoviesInfo"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.TopMovieIds.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.Movies.getDefaultInstance()))
+              .setSchemaDescriptor(new TrendingMoviesInfoMethodDescriptorSupplier("getTopTenTrendingMoviesInfo"))
+              .build();
+        }
+      }
+    }
+    return getGetTopTenTrendingMoviesInfoMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static TrendingMoviesInfoStub newStub(io.grpc.Channel channel) {
-    return new TrendingMoviesInfoStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<TrendingMoviesInfoStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<TrendingMoviesInfoStub>() {
+        @java.lang.Override
+        public TrendingMoviesInfoStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new TrendingMoviesInfoStub(channel, callOptions);
+        }
+      };
+    return TrendingMoviesInfoStub.newStub(factory, channel);
   }
 
   /**
@@ -52,7 +65,14 @@ public final class TrendingMoviesInfoGrpc {
    */
   public static TrendingMoviesInfoBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new TrendingMoviesInfoBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<TrendingMoviesInfoBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<TrendingMoviesInfoBlockingStub>() {
+        @java.lang.Override
+        public TrendingMoviesInfoBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new TrendingMoviesInfoBlockingStub(channel, callOptions);
+        }
+      };
+    return TrendingMoviesInfoBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -60,48 +80,52 @@ public final class TrendingMoviesInfoGrpc {
    */
   public static TrendingMoviesInfoFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new TrendingMoviesInfoFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<TrendingMoviesInfoFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<TrendingMoviesInfoFutureStub>() {
+        @java.lang.Override
+        public TrendingMoviesInfoFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new TrendingMoviesInfoFutureStub(channel, callOptions);
+        }
+      };
+    return TrendingMoviesInfoFutureStub.newStub(factory, channel);
   }
 
   /**
    */
-  public static abstract class TrendingMoviesInfoImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      */
-    public void getTopTenTrendingMoviesInfo(org.example.TopMovieIds request,
+    default void getTopTenTrendingMoviesInfo(org.example.TopMovieIds request,
         io.grpc.stub.StreamObserver<org.example.Movies> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_GET_TOP_TEN_TRENDING_MOVIES_INFO, responseObserver);
-    }
-
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            METHOD_GET_TOP_TEN_TRENDING_MOVIES_INFO,
-            asyncUnaryCall(
-              new MethodHandlers<
-                org.example.TopMovieIds,
-                org.example.Movies>(
-                  this, METHODID_GET_TOP_TEN_TRENDING_MOVIES_INFO)))
-          .build();
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTopTenTrendingMoviesInfoMethod(), responseObserver);
     }
   }
 
   /**
+   * Base class for the server implementation of the service TrendingMoviesInfo.
    */
-  public static final class TrendingMoviesInfoStub extends io.grpc.stub.AbstractStub<TrendingMoviesInfoStub> {
-    private TrendingMoviesInfoStub(io.grpc.Channel channel) {
-      super(channel);
-    }
+  public static abstract class TrendingMoviesInfoImplBase
+      implements io.grpc.BindableService, AsyncService {
 
-    private TrendingMoviesInfoStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return TrendingMoviesInfoGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service TrendingMoviesInfo.
+   */
+  public static final class TrendingMoviesInfoStub
+      extends io.grpc.stub.AbstractAsyncStub<TrendingMoviesInfoStub> {
+    private TrendingMoviesInfoStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TrendingMoviesInfoStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected TrendingMoviesInfoStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TrendingMoviesInfoStub(channel, callOptions);
     }
 
@@ -109,52 +133,48 @@ public final class TrendingMoviesInfoGrpc {
      */
     public void getTopTenTrendingMoviesInfo(org.example.TopMovieIds request,
         io.grpc.stub.StreamObserver<org.example.Movies> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(METHOD_GET_TOP_TEN_TRENDING_MOVIES_INFO, getCallOptions()), request, responseObserver);
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTopTenTrendingMoviesInfoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
+   * A stub to allow clients to do synchronous rpc calls to service TrendingMoviesInfo.
    */
-  public static final class TrendingMoviesInfoBlockingStub extends io.grpc.stub.AbstractStub<TrendingMoviesInfoBlockingStub> {
-    private TrendingMoviesInfoBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private TrendingMoviesInfoBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class TrendingMoviesInfoBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<TrendingMoviesInfoBlockingStub> {
+    private TrendingMoviesInfoBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TrendingMoviesInfoBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected TrendingMoviesInfoBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TrendingMoviesInfoBlockingStub(channel, callOptions);
     }
 
     /**
      */
     public org.example.Movies getTopTenTrendingMoviesInfo(org.example.TopMovieIds request) {
-      return blockingUnaryCall(
-          getChannel(), METHOD_GET_TOP_TEN_TRENDING_MOVIES_INFO, getCallOptions(), request);
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTopTenTrendingMoviesInfoMethod(), getCallOptions(), request);
     }
   }
 
   /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TrendingMoviesInfo.
    */
-  public static final class TrendingMoviesInfoFutureStub extends io.grpc.stub.AbstractStub<TrendingMoviesInfoFutureStub> {
-    private TrendingMoviesInfoFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private TrendingMoviesInfoFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class TrendingMoviesInfoFutureStub
+      extends io.grpc.stub.AbstractFutureStub<TrendingMoviesInfoFutureStub> {
+    private TrendingMoviesInfoFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TrendingMoviesInfoFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected TrendingMoviesInfoFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new TrendingMoviesInfoFutureStub(channel, callOptions);
     }
 
@@ -162,8 +182,8 @@ public final class TrendingMoviesInfoGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.example.Movies> getTopTenTrendingMoviesInfo(
         org.example.TopMovieIds request) {
-      return futureUnaryCall(
-          getChannel().newCall(METHOD_GET_TOP_TEN_TRENDING_MOVIES_INFO, getCallOptions()), request);
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTopTenTrendingMoviesInfoMethod(), getCallOptions()), request);
     }
   }
 
@@ -174,10 +194,10 @@ public final class TrendingMoviesInfoGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TrendingMoviesInfoImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TrendingMoviesInfoImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -206,10 +226,50 @@ public final class TrendingMoviesInfoGrpc {
     }
   }
 
-  private static final class TrendingMoviesInfoDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+          getGetTopTenTrendingMoviesInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.example.TopMovieIds,
+              org.example.Movies>(
+                service, METHODID_GET_TOP_TEN_TRENDING_MOVIES_INFO)))
+        .build();
+  }
+
+  private static abstract class TrendingMoviesInfoBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+    TrendingMoviesInfoBaseDescriptorSupplier() {}
+
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return org.example.Schema.getDescriptor();
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
+      return getFileDescriptor().findServiceByName("TrendingMoviesInfo");
+    }
+  }
+
+  private static final class TrendingMoviesInfoFileDescriptorSupplier
+      extends TrendingMoviesInfoBaseDescriptorSupplier {
+    TrendingMoviesInfoFileDescriptorSupplier() {}
+  }
+
+  private static final class TrendingMoviesInfoMethodDescriptorSupplier
+      extends TrendingMoviesInfoBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
+    private final java.lang.String methodName;
+
+    TrendingMoviesInfoMethodDescriptorSupplier(java.lang.String methodName) {
+      this.methodName = methodName;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
+      return getServiceDescriptor().findMethodByName(methodName);
     }
   }
 
@@ -222,8 +282,8 @@ public final class TrendingMoviesInfoGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new TrendingMoviesInfoDescriptorSupplier())
-              .addMethod(METHOD_GET_TOP_TEN_TRENDING_MOVIES_INFO)
+              .setSchemaDescriptor(new TrendingMoviesInfoFileDescriptorSupplier())
+              .addMethod(getGetTopTenTrendingMoviesInfoMethod())
               .build();
         }
       }
