@@ -42,7 +42,6 @@ public class UserRatingService {
         userRating.setRatings(Collections.singletonList(
                 new Rating("0", 0)
         ));
-
         return userRating;
     }
 }
